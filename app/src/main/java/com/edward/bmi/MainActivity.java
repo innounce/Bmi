@@ -1,6 +1,7 @@
 package com.edward.bmi;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,15 +46,19 @@ public class MainActivity extends AppCompatActivity {
         float hf = Float.parseFloat(h);
         float wf = Float.parseFloat(w);
         float bmi = wf / ( hf * hf);
+
+        Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("Bmi", bmi);
+        startActivity(intent);
 //        Log.d("MainActivity", "bmi: "+bmi);
 //        Toast.makeText(this, "BMI is " + bmi, Toast.LENGTH_LONG).show();
-        result.setText("Your BMI is " + bmi);
-        new AlertDialog.Builder(this).setTitle("MBI").setMessage("BMI is " + bmi).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                height.setText("");
-                weight.setText("");
-            }
-        }).show();
+//        result.setText("Your BMI is " + bmi);
+//        new AlertDialog.Builder(this).setTitle("MBI").setMessage("BMI is " + bmi).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                height.setText("");
+//                weight.setText("");
+//            }
+//        }).show();
     }
 }

@@ -3,4 +3,5 @@
     <string name="help">HELP</string>
     <string name="explan">BMI is ...</string>
     <string name="ok">OK</string>
+    <string name="your_bmi_is">your BMI is</string>
 </resources>
